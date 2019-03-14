@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Option;
 use Illuminate\Http\Request;
 use App\Http\Resources\OptionResource;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class OptionController extends Controller
 {
@@ -24,8 +25,17 @@ class OptionController extends Controller
 
     public function show($id)
     {
-        $data = $this->option->findOrFail($id);
-        return new OptionResource($data);
+        try {
+            $data = $this->option->findOrFail($id);
+            return new OptionResource($data);
+        }   
+        catch(ModelNotFoundException $e)
+        {
+           return response([
+               'error' => true,
+               'message' => 'Resource not found'
+           ],404);
+        }
     }
 
     

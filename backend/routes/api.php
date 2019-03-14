@@ -19,3 +19,7 @@ Route::resource('size', 'SizeController',[
 Route::resource('option', 'OptionController',[
     'only' => ['index', 'show']
 ]);
+
+Route::resource('flavor', 'FlavorController',[
+    'only' => ['index', 'show']
+]);

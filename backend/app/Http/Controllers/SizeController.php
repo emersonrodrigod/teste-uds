@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Size;
+use Illuminate\Http\Request;
 use App\Http\Resources\SizeResource;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SizeController extends Controller
 {
@@ -23,8 +24,17 @@ class SizeController extends Controller
 
     public function show($id)
     {
-        $data = $this->size->findOrFail($id);
-        return new SizeResource($data);
+        try{
+            $data = $this->size->findOrFail($id);
+            return new SizeResource($data);
+        }
+        catch(ModelNotFoundException $e)
+        {
+           return response([
+               'error' => true,
+               'message' => 'Resource not found'
+           ],404);
+        }
     }
 
 }
