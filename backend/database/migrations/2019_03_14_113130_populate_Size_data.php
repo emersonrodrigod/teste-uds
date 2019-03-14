@@ -22,7 +22,7 @@ class PopulateSizeData extends Migration
 			    'preparation_time' => 15
             ],
             [
-			    'name' => 'Média',
+			    'name' => 'Media',
 			    'price' => 30,
 			    'preparation_time' => 20
             ],

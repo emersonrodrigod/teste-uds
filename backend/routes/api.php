@@ -12,4 +12,10 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::resource('size', 'SizeController');
+Route::resource('size', 'SizeController',[
+    'only' => ['index', 'show'] 
+]);
+
+Route::resource('option', 'OptionController',[
+    'only' => ['index', 'show']
+]);
