@@ -1,6 +1,6 @@
 # teste-uds
 
-Api rest desenvolvida a fim de atestar capacidade técinca para fazer parte do time da UDS Tecnologia
+Api rest desenvolvida afim de atestar capacidade técinca para fazer parte do time da UDS Tecnologia
 
 ## Execução do projeto
 Para executar o projeto é necessário ter o Docker instalado : https://www.docker.com/
