@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo Subindo container docker 
 docker-compose up -d
 
